@@ -1,0 +1,228 @@
+
+       <html>
+    <head>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../layout/styles/bootstrap.min.css">
+        <script src="../layout/scripts/jquery-2.0.0.js"></script>
+        <script src="../layout/scripts/bootstrap.min.js"></script>
+        
+        <style>
+            .radio-left {
+                float: left;
+            }
+        </style>
+        
+        <title>Add member</title>
+        
+        <script>
+            $(function(){
+                selectUpdate();
+            });
+            
+            function selectUpdate() {
+                var sel_type = $('#s_type').val();
+                var sel_staff_cat = $('#s_category').val();
+                
+                switch(sel_type) {
+                    case "type1": {
+                        var content = "<option value='cat1'>Professor</option> \
+                    <option value='cat2'>Senior Lecturer</option>   \
+                    <option value='cat3'>Lecturer</option>  \
+                    <option value='cat4'>Instructor</option>    \
+                    <option value='cat5'>Temp. Academic Staff</option>";
+                        
+                        $('#s_category').html(content);
+                    }
+                    break;
+                    case "type4": {
+                        var content = "<option value='cat6'>Masters Programme</option> \
+                    <option value='cat7'>Undergraduate Programme</option>";
+                        
+                        $('#s_category').html(content);
+                    }
+                    break;
+                    default: {
+                        $('#s_category').html("");
+                    }
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+                <div class="container" style='text-align:center;'>
+            <h2 style="margin-bottom:25px;">Welcome to UCSC</h2>
+        <form class="form-horizontal"  method="post" action="../../controller/personal_information.php">
+            <div class="form-group">
+            <label for="userid" class="col-sm-4 control-label">UserID</label>
+                <div class="col-sm-3">
+            <input required class="form-control" type="text" name="userid">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="fname" class="col-sm-4 control-label">First Name</label>
+                 <div class="col-sm-3">
+                     <input required class="form-control" type="text" name="fname">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="lname" class="col-sm-4 control-label">Middle Name</label>
+                 <div class="col-sm-3">
+                     <input required  class="form-control" type="text" name="mname">
+                 </div>
+            </div>
+            
+             <div class="form-group">
+                 <label for="lname" class="col-sm-4 control-label">Last Name</label>
+                 <div class="col-sm-3">
+                     <input required  class="form-control" type="text" name="lname">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="name_initials" class="col-sm-4 control-label">Name with initials</label>
+                 <div class="col-sm-3">
+                     <input required  class="form-control" type="text" name="name_initials">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="gender" class="col-sm-4 control-label">Gender</label>
+                <label class="radio-inline radio-left">
+              <input type="radio" name="gender" id="gender" value="male"> Male
+            </label>
+                <label class="radio-inline radio-left">
+              <input type="radio" name="gender" id="gender" value="female"> Female
+            </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="col-sm-4 control-label">Email Address</label>
+                <div class="col-sm-3">
+                    <input required class="form-control" type="email" name="email">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="cotactno1" class="col-sm-4 control-label">Contact Number 1</label>
+                <div class="col-sm-3">
+                    <input required class="form-control" type="text" name="contactno1">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="cotactno2" class="col-sm-4 control-label">Contact Number 2</label>
+                <div class="col-sm-3">
+                    <input required class="form-control" type="text" name="contactno2">
+                </div>
+            </div>
+                        
+             <div class="form-group">
+                 <label for="addline1" class="col-sm-4 control-label">Address line1</label>
+                 <div class="col-sm-3">
+                     <input class="form-control" type="text" name="addline1">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="addline2" class="col-sm-4 control-label">Address line2</label>
+                 <div class="col-sm-3">
+                     <input class="form-control" type="text" name="addline2">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="city" class="col-sm-4 control-label">City</label>
+                 <div class="col-sm-3">
+                     <input class="form-control" type="text" name="city">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="country" class="col-sm-4 control-label">Country</label>
+                 <div class="col-sm-3">
+                     <input class="form-control" type="text" name="country">
+                 </div>
+            </div>
+
+	       <div class="form-group">
+                 <label for="designation" class="col-sm-4 control-label">Designation</label>
+                 <div class="col-sm-3">
+                     <input required  class="form-control" type="text" name="designation">
+                 </div>
+            </div>
+            
+            <div class="form-group">
+                 <label for="s_type" class="col-sm-4 control-label">Staff Type</label>
+                 <div class="col-sm-3">
+                 <select name="s_type" class="form-control" id="s_type" onchange="selectUpdate()">
+                    <option value="type1">Academic Staff</option>
+                    <option value="type2">Administrative Staff</option>
+                    <option value="type3">Project Staff</option>
+                    <option value="type4">Visiting Staff</option>
+                </select>
+                 </div>
+            </div>
+            
+             <div class="form-group">
+                 <label for="s_category" class="col-sm-4 control-label">Staff Category</label>
+                 <div class="col-sm-3">
+                 <select name="s_category" class="form-control" id="s_category">
+                </select>
+                 </div>
+            </div>
+            
+            
+            <div class="form-group">
+                 <label for="department" class="col-sm-4 control-label">Department / Division / center</label>
+                 <div class="col-sm-3">
+                 <select name="dep_divi_center" class="form-control" id="dep_divi_center">
+                    <option value="D0001">Computation and Intelligent Systems</option>
+                    <option value="D0002">Information Systems Engineering</option>
+                    <option value="D0003">Communication and Media Technologies</option>
+                    <option value="DIV0001">Academic and Pulications</option>
+                    <option value="DIV0002">Establishments and Administration</option>
+                    <option value="DIV0003">Examinations and Registration</option>
+                    <option value="DIV0004">Engineering Division</option>
+                    <option value="DIV0005">Finance Division</option>
+                    <option value="DIV0006">Information Systems(NOC)</option>
+                     <option value="C0001">Advanced Digital Media Technology Center (ADMTC)</option>
+                    <option value="C0002">Computing Services Center (CSC)</option>
+                    <option value="C0003">Digital Forensic Center (DFC)</option>
+                    <option value="C0004">E-learning Center (ELC)</option>
+                    <option value="C0005">External Degree Center (EDC)</option>
+                    <option value="C0006">Professional Development Center (PDC)</option>
+                </select>
+                 </div>
+            </div>
+            
+             <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">Password</label>
+                <div class="col-sm-3">
+            <input required type="password" class="form-control" id="password" name="password">
+                </div>
+            </div>
+           
+            <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">Re-confirm Password</label>
+                <div class="col-sm-3">
+            <input required type="password" class="form-control" id="repassword">
+                </div>
+            </div>
+            
+           <div class="form-group">
+                 <label for="profilepic" class="col-sm-4 control-label">Profile Image</label>
+                 <div class="col-sm-3">
+                     <input  type="file" name="profilepic">
+                 </div>
+            </div>
+            
+            <button type="submit" class="btn btn-default" style="margin-left:-133px;">Submit</button>
+              
+            </form>
+        </div>
+    </body>
+</html>

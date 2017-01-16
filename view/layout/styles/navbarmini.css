@@ -1,0 +1,31 @@
+#navbarmini {
+    position: fixed;
+    top: 0;
+
+    z-index: 1
+}
+
+#navbarmini,
+#navbar .wp-submenu,
+#navbar,
+#navbarwrap {
+    width: 40px;
+    background-color: #23282d
+}
+
+#navbarmini {
+    position: fixed;
+    top: 0;
+    bottom: -120px;
+    z-index: 1
+}
+
+.folded #navbarmini,
+.folded #navbarwrap {
+    width: 360px
+}
+
+.logo{
+	margin-left:1px;
+	position:absolute;
+}

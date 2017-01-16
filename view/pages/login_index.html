@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	
+	<link rel="stylesheet" href="../layout/styles/style.css">
+</head>
+<body>
+	<div id="background">
+    <img src="back.png" class="stretch" alt="" />
+    </div>
+	<section class="loginform cf">
+		<form name="login" action="../../controller/login.php" method="post" accept-charset="utf-8">
+			<ul>
+				<li>
+					<label for="userid" >User ID</label>
+					<input type="text" name="user_id" placeholder="userID" required>
+				</li>
+				<li>
+					<label for="password">Password</label>
+					<input type="password" name="password" placeholder="password" required></li>
+				<li>
+					<input type="submit" value="Login" name="lg">
+                    <!-- <input type="submit" value="Forgot Password" name="fp"> -->
+                    <input type="submit" value="Sign Up" name="su">
+				</li>
+			</ul>
+		</form>
+	</section>
+</body>
+</html>
